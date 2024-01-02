@@ -8,10 +8,14 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import EmployeeGrid from './components/EmployeeGrid';
 import MyGrid from './components/MyGrid';
+import React, { useState } from 'react'
+import LanguageContex1 from './pages/LanguageContex1';
 function App() {
+  const [lan,setlan]= useState('en')
   return (
     <>
     {/* // <Container> */}
+    <LanguageContex1.Provider  value={{lan,setlan}}>
 
       <ApplicationNav/>
 
@@ -25,6 +29,7 @@ function App() {
 
 
       </Routes>
+      </LanguageContex1.Provider>
 
     {/* // </Container> */}
     </>

@@ -1,9 +1,30 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import authfetch from '../axioshandler/interseptor';
+import LanguageContex1 from '../pages/LanguageContex1';
 
 export default function RegistrationForm() {
+  const {lan}= useContext(LanguageContex1)
+
+  const languageObject= {
+ 
+ 
+   "en" : {
+ 
+     "firstName": "firstName",
+     "lastName": "lastName"
+ 
+   },
+   "hi": {
+     "firstName": "pratha name",
+     "lastName": "akhri name"
+   }
+ 
+ 
+ 
+ 
+  }
 
   const [form,setform] = useState({
     title : "",
@@ -55,13 +76,15 @@ export default function RegistrationForm() {
     </Form.Group>
 
     <Form.Group className="mb-3" controlId="">
-      <Form.Label>FirstName</Form.Label>
+    <Form.Label>{languageObject[lan].firstName}</Form.Label>
+      {/* <Form.Label>FirstName</Form.Label> */}
       <Form.Control type="text" placeholder="Please Enter First Name" 
       name='firstName' onChange={handleInput} />
     </Form.Group>
     
     <Form.Group className="mb-3" controlId="">
-      <Form.Label>LastName</Form.Label>
+    <Form.Label>{languageObject[lan].lastName}</Form.Label>
+      {/* <Form.Label>LastName</Form.Label> */}
       <Form.Control type="text" placeholder="Please Enter Last Name"
       name='lastName' onChange={handleInput} 
       />

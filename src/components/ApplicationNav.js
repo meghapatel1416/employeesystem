@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
+import LanguageContex1 from '../pages/LanguageContex1';
 
 export default function ApplicationNav() {
+
+const {lan,setlan} =  useContext(LanguageContex1)
+  const handleLan = (e)=>{
+
+    setlan(e.target.value);
+  }
   return (
     <Navbar bg="light" data-bs-theme="light">
     <Container>
@@ -15,9 +22,20 @@ export default function ApplicationNav() {
 </svg>
       </Navbar.Brand>
       <Nav className="me-auto">
-        <Nav.Link as={Link} to="/home">Home</Nav.Link>
-        <Nav.Link as={Link} to="/">Registration</Nav.Link>
+        <Nav.Link as={Link}  to="#home">Home</Nav.Link>
+        <Nav.Link as={Link} to='/'>Registration</Nav.Link>
         <Nav.Link as={Link} to="/login">Login</Nav.Link>
+        <Nav.Link >
+          
+          <select onChange={handleLan}>
+
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="gj">Gujrati</option>
+          </select>
+          
+        </Nav.Link>
+        
       </Nav>
     </Container>
   </Navbar>
