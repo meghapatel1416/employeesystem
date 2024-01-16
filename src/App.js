@@ -10,8 +10,12 @@ import EmployeeGrid from './components/EmployeeGrid';
 import MyGrid from './components/MyGrid';
 import React, { useState } from 'react'
 import LanguageContex1 from './pages/LanguageContex1';
+import { useSelector } from 'react-redux';
 function App() {
   const [lan,setlan]= useState('en')
+  const data = useSelector(y=>y);
+
+  alert(data);
   return (
     <>
     {/* // <Container> */}
