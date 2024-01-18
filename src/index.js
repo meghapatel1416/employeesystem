@@ -9,11 +9,15 @@ import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter } from 'react-router-dom';
 import MyGrid from './components/MyGrid';
 import Display1 from './Display1';
+import { Provider } from 'react-redux';
+import store from './reduxReducer/store';
+import MyCounter from './reduxReducer/MyCounter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
      <BrowserRouter>
+     <Provider store={store}>
      <ToastContainer
     position="top-center"
     autoClose={5000}
@@ -26,6 +30,8 @@ root.render(
     pauseOnHover
     />
      < App/>
+     <MyCounter/>
+     </Provider>
   </BrowserRouter>
     
   </React.StrictMode>
