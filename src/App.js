@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import EmployeeGrid from './components/EmployeeGrid';
 import MyGrid from './components/MyGrid';
 import React, { useState } from 'react'
-import LanguageContex1 from './pages/LanguageContex1';
+import LanguageContex1 from './LanguageContex1';
 import { useSelector } from 'react-redux';
 function App() {
   const [lan,setlan]= useState('en')

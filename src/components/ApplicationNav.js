@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import LanguageContex1 from '../pages/LanguageContex1';
+import LanguageContex1 from '../LanguageContex1';
 
 export default function ApplicationNav() {
 

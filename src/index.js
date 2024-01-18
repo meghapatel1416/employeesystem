@@ -8,6 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter } from 'react-router-dom';
 import MyGrid from './components/MyGrid';
+import Display1 from './Display1';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
